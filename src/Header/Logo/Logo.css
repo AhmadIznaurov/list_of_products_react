@@ -1,0 +1,15 @@
+.logo p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.logo p {
+    width: 100px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-size: 30px;
+    color: darkblue;
+    font-family: 'Bebas Neue', sans-serif;
+}

@@ -1,28 +1,22 @@
-import React from 'react';
-import './ProductList.css';
+import React, {useState} from 'react';
+import './Content.css';
+import Card from "./Card/Card";
+import Checkout from '../Header/Checkout/Checkout';
 
+const Content = () => {
 
-const ProductList = ({  products }) => {
+    const [cartItems, setCartItems] = useState([]);
+
+    const addToCart = (product) => {
+        setCartItems([...cartItems, product]);
+    };
 
     return (
-        <div className="product-list">
-            {products.map((product) => (
-                <div className="c
-                ard" key={product.id}>
-                    <div className="card-image">
-                        <img src={product.image} alt={product.name} />
-                    </div>
-                    <div className="card-info">
-                        <div className="card-name">{product.name}</div>
-                        <div className="card-price">${product.price.toFixed(2)}</div>
-                        <div className="card-button">
-                            <button className="btn">Add to Cart</button>
-                        </div>
-                    </div>
-                </div>
-            ))}
+        <div className="content">
+            <Card addToCart={addToCart} />
+            <Checkout cartItems={cartItems} />
         </div>
     );
 };
 
-export default ProductList;
+export default Content;
