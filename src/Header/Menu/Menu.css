@@ -1,0 +1,44 @@
+.menu ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin-right: 20px;
+}
+
+.menu li:last-child {
+    margin-right: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    width: 1570px;
+}
+
+.menu > ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu > ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.menu > ul li a {
+    color: black;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: small;
+}
