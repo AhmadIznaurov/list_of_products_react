@@ -14,9 +14,11 @@ import Button from "../Button/Button";
 
 
 
-const Card = ({ addToCart }) => {
+const Card = ({ addToCart }) => {  // определение функционального компонента Card, который принимает в качестве свойства функцию addToCart
 
     const products = [
+        // определение массива объектов products, который содержит информацию о всех товарах в магазине
+
         { id: 1, name: 'MacBook', price: 1000, bought: false, rating: 5, image: macbook },
         { id: 2, name: 'Galaxy', price: 999, bought: false, rating: 4, image: Galaxy },
         { id: 3, name: 'Скутер', price: 600, bought: false, rating: 5, image: Skuter },
@@ -30,12 +32,13 @@ const Card = ({ addToCart }) => {
 
 
 
-    return (
-        <div className="content"> {products.map((product) => (
+    return (    // возвращение JSX разметки, которая содержит список компонентов "card",
+        <div className="content"> {products.map((product) => (  // созданных при помощи метода .map(). Каждый элемент массива products превращается в компонент.
             <div className="card" key={product.id}> <div className="card-image">
                 <img src={product.image} alt={product.name} /> </div>
                 <div className="card-info"> <div className="card-name">{product.name}</div>
                     <div className="card-price">${product.price.toFixed(2)}</div>
+
                     <Button addToCart={addToCart}/>
                 </div>
             </div>
@@ -43,5 +46,9 @@ const Card = ({ addToCart }) => {
         </div>
     );
 };
+
+// Атрибуты компонента заполняются данными из каждого объекта массива products.
+// При клике на кнопку, который рендерит компонент Button, функция addToCart вызывается с передачей аргумента-объекта product. };
+
 
 export default Card;

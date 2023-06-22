@@ -1,17 +1,18 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './Content.css';
 import Card from "./Card/Card";
 import Checkout from '../Header/Checkout/Checkout';
 
-const Content = () => {
+const Content = ({ cartItems, addToCart }) => {
+    // определение функционального компонента Content, который принимает
+    // два значения cartItems и addToCart через деструктуризацию props
 
-    const [cartItems, setCartItems] = useState([]);
-
-    const addToCart = (product) => {
-        setCartItems([...cartItems, product]);
-    };
 
     return (
+
+        // JSX-разметка, которая содержит два дочерних компонента:
+        // Card и Checkout, которым передаются данные через props
+
         <div className="content">
             <Card addToCart={addToCart} />
             <Checkout cartItems={cartItems} />
@@ -21,6 +22,3 @@ const Content = () => {
 
 export default Content;
 
-
-
-// Strange factor using some code to make something for ...
